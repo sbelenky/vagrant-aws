@@ -77,11 +77,11 @@ Vagrant.configure(2) do |config|
   # Puppet, Chef, Ansible, Salt, and Docker are also available. Please see the
   # documentation for more information about their specific syntax and use.
   config.vm.provision "shell", inline: <<-SHELL
-    # sudo apt-get update
+    sudo apt-get update
+    sudo apt-get install -y virtualbox
     # sudo apt-get install -y apache2
-    sudo wget http://download.virtualbox.org/virtualbox/5.0.12/virtualbox-5.0_5.0.12-104815~Ubuntu~trusty_amd64.deb
-    sudo dpkg -i virtualbox-5.0_5.0.12-104815~Ubuntu~trusty_amd64.deb
     sudo wget https://releases.hashicorp.com/vagrant/1.7.4/vagrant_1.7.4_x86_64.deb
     sudo dpkg -i vagrant_1.7.4_x86_64.deb
+    sudo apt-get install -y git
   SHELL
 end
